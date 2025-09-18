@@ -15,6 +15,7 @@ import {
   Wrench
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Resources = () => {
   const [formData, setFormData] = useState({
@@ -22,16 +23,39 @@ const Resources = () => {
     email: "",
     suburb: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    toast({
-      title: "Success!",
-      description: "Your free report is being prepared. Check your email in a few minutes.",
-    });
-    setFormData({ name: "", email: "", suburb: "" });
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase.functions.invoke('send-enquiry-email', {
+        body: {
+          type: 'resources',
+          data: formData
+        }
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Success!",
+        description: "Your free report request has been sent. We'll email it to you shortly!",
+      });
+      
+      setFormData({ name: "", email: "", suburb: "" });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const reportSections = [
@@ -152,8 +176,13 @@ const Resources = () => {
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full btn-trust mt-6">
-                      Download the Free Report
+                    <Button 
+                      type="submit" 
+                      size="lg" 
+                      className="w-full btn-trust mt-6"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? "Sending..." : "Download the Free Report"}
                     </Button>
                   </form>
                   
