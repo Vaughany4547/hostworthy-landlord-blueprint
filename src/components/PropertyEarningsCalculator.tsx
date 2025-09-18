@@ -28,24 +28,23 @@ interface CalculationResults {
 }
 
 const PropertyEarningsCalculator = () => {
-  const [monthlyRent, setMonthlyRent] = useState<number>(3000);
+  const [weeklyRent, setWeeklyRent] = useState<number>(700);
   const [tenantChanges, setTenantChanges] = useState<number>(1);
   const [annualMaintenance, setAnnualMaintenance] = useState<number>(800);
   const [vacancyWeeks, setVacancyWeeks] = useState<number>(2);
 
   const calculateResults = useCallback((): CalculationResults => {
-    const weeklyRent = monthlyRent * 12 / 52;
     const vacancyLoss = vacancyWeeks * weeklyRent;
     
     // Traditional lease calculations
-    const traditionalAnnualRent = (monthlyRent * 12) - vacancyLoss;
-    const traditionalRelettingFees = tenantChanges * (monthlyRent * 2); // 2 weeks rent per change
+    const traditionalAnnualRent = (weeklyRent * 52) - vacancyLoss;
+    const traditionalRelettingFees = tenantChanges * (weeklyRent * 2); // 2 weeks rent per change
     const traditionalMaintenanceCosts = annualMaintenance;
-    const traditionalManagementFees = (monthlyRent * 12) * 0.08; // 8% management fees
+    const traditionalManagementFees = (weeklyRent * 52) * 0.08; // 8% management fees
     const traditionalNet = traditionalAnnualRent - traditionalRelettingFees - traditionalMaintenanceCosts - traditionalManagementFees;
 
     // Hostworthy calculations
-    const hostworthyAnnualRent = monthlyRent * 12; // Guaranteed rent
+    const hostworthyAnnualRent = weeklyRent * 52; // Guaranteed rent
     const hostworthyRelettingFees = 0;
     const hostworthyMaintenanceCosts = 0; // We cover under $250
     const hostworthyManagementFees = 0;
@@ -72,7 +71,7 @@ const PropertyEarningsCalculator = () => {
       },
       difference: difference
     };
-  }, [monthlyRent, tenantChanges, annualMaintenance, vacancyWeeks]);
+  }, [weeklyRent, tenantChanges, annualMaintenance, vacancyWeeks]);
 
   const results = calculateResults();
 
@@ -110,21 +109,21 @@ const PropertyEarningsCalculator = () => {
                   <p className="text-sm text-muted-foreground">Adjust the values to see your personalized comparison</p>
                 </div>
 
-                {/* Monthly Rent */}
+                {/* Weekly Rent */}
                 <div className="space-y-2">
-                  <Label htmlFor="monthly-rent" className="text-sm font-medium">
-                    Monthly Market Rent
+                  <Label htmlFor="weekly-rent" className="text-sm font-medium">
+                    Weekly Market Rent
                   </Label>
                   <div className="relative">
                     <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">$</span>
                     <Input
-                      id="monthly-rent"
+                      id="weekly-rent"
                       type="number"
-                      value={monthlyRent}
-                      onChange={(e) => setMonthlyRent(Number(e.target.value))}
+                      value={weeklyRent}
+                      onChange={(e) => setWeeklyRent(Number(e.target.value))}
                       className="pl-8"
                       min="0"
-                      step="100"
+                      step="25"
                     />
                   </div>
                 </div>
