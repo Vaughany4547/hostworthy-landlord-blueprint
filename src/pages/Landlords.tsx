@@ -398,7 +398,7 @@ const Landlords = () => {
             <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
               <Link to="/contact">Book Free Consultation</Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+            <Button asChild variant="secondary" size="lg">
               <Link to="/resources">Download Free Report</Link>
             </Button>
           </div>

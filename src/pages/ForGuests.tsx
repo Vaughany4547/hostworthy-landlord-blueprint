@@ -251,7 +251,7 @@ const ForGuests = () => {
             <Button asChild size="lg" variant="secondary">
               <Link to="/about">Meet Our Team</Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+            <Button asChild variant="secondary" size="lg">
               <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
