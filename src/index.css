@@ -2,41 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Hostworthy Design System - Professional, Clean, Trustworthy */
 
 @layer base {
   :root {
+    /* Brand Colors - Neutral with Trust-building Blues/Greens */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 215 28% 17%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 28% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 28% 17%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Professional Navy Blue for Trust */
+    --primary: 215 84% 14%;
+    --primary-foreground: 0 0% 98%;
+    
+    /* Trust Blue - Softer accent */
+    --trust: 207 79% 52%;
+    --trust-foreground: 0 0% 98%;
+    --trust-light: 207 89% 96%;
+    
+    /* Growth Green - Success accent */
+    --growth: 158 64% 44%;
+    --growth-foreground: 0 0% 98%;
+    --growth-light: 158 64% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Warm neutral */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 215 28% 17%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 207 89% 96%;
+    --accent-foreground: 215 84% 14%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 207 79% 52%;
 
-    --radius: 0.5rem;
+    /* Spacing & Layout */
+    --radius: 0.75rem;
+    --section-padding: 4rem 1rem;
+    
+    /* Professional Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--trust)));
+    --gradient-trust: linear-gradient(135deg, hsl(var(--trust-light)), hsl(var(--accent)));
+    --gradient-growth: linear-gradient(135deg, hsl(var(--growth-light)), hsl(var(--secondary)));
+    
+    /* Professional Shadows */
+    --shadow-soft: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -1px hsl(var(--primary) / 0.06);
+    --shadow-medium: 0 10px 15px -3px hsl(var(--primary) / 0.1), 0 4px 6px -2px hsl(var(--primary) / 0.05);
+    --shadow-large: 0 20px 25px -5px hsl(var(--primary) / 0.1), 0 10px 10px -5px hsl(var(--primary) / 0.04);
+    
+    /* Typography Scale */
+    --heading-1: 3rem;
+    --heading-2: 2.25rem;
+    --heading-3: 1.875rem;
+    --heading-4: 1.5rem;
+    --body-large: 1.125rem;
+    --body-base: 1rem;
+    --body-small: 0.875rem;
+    
+    /* Professional Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +139,71 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Typography Styles */
+  h1 {
+    font-size: var(--heading-1);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  
+  h2 {
+    font-size: var(--heading-2);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  
+  h3 {
+    font-size: var(--heading-3);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  
+  h4 {
+    font-size: var(--heading-4);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+}
+
+@layer components {
+  /* Professional Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-trust text-primary-foreground hover:opacity-90 transition-all duration-300 px-8 py-4 rounded-xl font-semibold text-lg shadow-md hover:shadow-lg;
+  }
+  
+  .btn-trust {
+    @apply bg-trust text-trust-foreground hover:bg-trust/90 transition-all duration-300 px-6 py-3 rounded-lg font-medium shadow-sm hover:shadow-md;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 px-6 py-3 rounded-lg font-medium;
+  }
+  
+  /* Section Utilities */
+  .section {
+    padding: var(--section-padding);
+  }
+  
+  .container-custom {
+    @apply max-w-6xl mx-auto px-4;
+  }
+  
+  /* Professional Gradients */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-trust {
+    background: var(--gradient-trust);
+  }
+  
+  .gradient-growth {
+    background: var(--gradient-growth);
   }
 }
