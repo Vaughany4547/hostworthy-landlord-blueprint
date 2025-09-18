@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Link } from "react-router-dom";
 import { 
   Shield, 
@@ -243,6 +244,103 @@ const Landlords = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Section */}
+      <section className="section bg-background">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Hostworthy vs Traditional Leasing</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              A smarter way to lease your property — and earn more without the usual headaches.
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+              <div className="bg-primary/5 p-4 border-b">
+                <h3 className="text-lg font-semibold text-primary flex items-center">
+                  📊 Comparison Table
+                </h3>
+              </div>
+              
+              <div className="overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead className="font-semibold text-primary">Feature / Cost</TableHead>
+                      <TableHead className="font-semibold text-primary">Typical Lease</TableHead>
+                      <TableHead className="font-semibold text-primary">Hostworthy Lease</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell className="font-medium">Monthly Rent</TableCell>
+                      <TableCell>Market rate (variable)</TableCell>
+                      <TableCell className="text-trust font-medium">✅ Slightly above market (locked in)</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Vacancy Losses</TableCell>
+                      <TableCell>You cover all vacancies</TableCell>
+                      <TableCell className="text-trust font-medium">✅ Rent paid even if property is empty</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Letting Agent Fees</TableCell>
+                      <TableCell>Up to 2 weeks' rent every time tenants change</TableCell>
+                      <TableCell className="text-trust font-medium">✅ No reletting fees</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Property Management Fees</TableCell>
+                      <TableCell>7–10% monthly (plus GST)</TableCell>
+                      <TableCell className="text-trust font-medium">✅ $0 management fees</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Maintenance Costs</TableCell>
+                      <TableCell>You pay for everything</TableCell>
+                      <TableCell className="text-trust font-medium">✅ Hostworthy covers maintenance under $250</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Tenant Turnover</TableCell>
+                      <TableCell>Avg. 12–18 months per tenant</TableCell>
+                      <TableCell className="text-trust font-medium">✅ Long-term lease with us (2–5+ years)</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Wear & Tear from Tenants</TableCell>
+                      <TableCell>Medium to high (varies by family/pet use)</TableCell>
+                      <TableCell className="text-trust font-medium">✅ Regular professional cleaning & inspections</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Risk of Missed Rent</TableCell>
+                      <TableCell>Landlord bears the risk</TableCell>
+                      <TableCell className="text-trust font-medium">✅ Hostworthy pays on time, every time</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Council Rates, Utilities</TableCell>
+                      <TableCell>Landlord pays</TableCell>
+                      <TableCell>Same — but we offer to cover rates in welcome bonus</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Property Upgrades or Incentives</TableCell>
+                      <TableCell>N/A</TableCell>
+                      <TableCell className="text-trust font-medium">✅ You choose a bonus: Free stay, rates paid, or upgrades</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Peace of Mind</TableCell>
+                      <TableCell>Depends on tenants & agent</TableCell>
+                      <TableCell className="text-trust font-medium">✅ High-touch, hands-off, fully managed experience</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                With Hostworthy, you're not just getting a tenant — you're getting a partner who protects your income, your property, and your time.
+              </p>
             </div>
           </div>
         </div>
