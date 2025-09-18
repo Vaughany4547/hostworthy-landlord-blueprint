@@ -140,115 +140,6 @@ const Landlords = () => {
         </div>
       </section>
 
-      {/* Choose Your Bonus */}
-      <section className="section gradient-hero">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              🎁 Choose Your Welcome Bonus
-            </h2>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              As a thank-you for partnering with Hostworthy, we'll give you an exclusive bonus — tailored to what matters most to you.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {/* Bonus Option 1 */}
-            <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/20 transition-all duration-300 p-6">
-              <CardContent className="text-center space-y-4 p-0">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto">
-                  <MapPin className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="font-semibold text-white text-lg">Free Off-Peak Week</h4>
-                <p className="text-white/80 text-sm">
-                  Enjoy a complimentary week at any Hostworthy property during off-peak season
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Bonus Option 2 */}
-            <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/20 transition-all duration-300 p-6">
-              <CardContent className="text-center space-y-4 p-0">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto">
-                  <Home className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="font-semibold text-white text-lg">Council Rates Paid</h4>
-                <p className="text-white/80 text-sm">
-                  We'll cover your first quarter council rates as our welcome gift
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Bonus Option 3 */}
-            <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/20 transition-all duration-300 p-6">
-              <CardContent className="text-center space-y-4 p-0">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto">
-                  <Hammer className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="font-semibold text-white text-lg">Capital Upgrade</h4>
-                <p className="text-white/80 text-sm">
-                  $1,000 contribution toward property improvements of your choice
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Bonus Option 4 */}
-            <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/20 transition-all duration-300 p-6">
-              <CardContent className="text-center space-y-4 p-0">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto">
-                  <Gift className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="font-semibold text-white text-lg">Cash Rebate</h4>
-                <p className="text-white/80 text-sm">
-                  Choose a direct cash rebate or premium gift card instead
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center">
-            <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
-              <Link to="/contact">Get Your Bonus Estimate</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Real-World Example */}
-      <section className="section gradient-growth">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl p-8 shadow-lg">
-              <div className="flex items-start space-x-4">
-                <div className="w-16 h-16 bg-growth/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Star className="w-8 h-8 text-growth" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-primary mb-4">Real-World Example</h3>
-                  <p className="text-lg text-muted-foreground mb-6">
-                    <strong>Sarah</strong>, a Sunshine Coast property owner, rented her 2-bedroom unit to Hostworthy. She now earns <strong className="text-growth">$4,200/month</strong> — every month — while we manage bookings, cleaning, and guest care. She hasn't had to lift a finger since.
-                  </p>
-                  <div className="grid md:grid-cols-3 gap-4 text-center">
-                    <div className="bg-growth/5 rounded-lg p-4">
-                      <div className="text-2xl font-bold text-growth">$4,200</div>
-                      <div className="text-sm text-muted-foreground">Monthly Rent</div>
-                    </div>
-                    <div className="bg-growth/5 rounded-lg p-4">
-                      <div className="text-2xl font-bold text-growth">0</div>
-                      <div className="text-sm text-muted-foreground">Late Payments</div>
-                    </div>
-                    <div className="bg-growth/5 rounded-lg p-4">
-                      <div className="text-2xl font-bold text-growth">100%</div>
-                      <div className="text-sm text-muted-foreground">Stress-Free</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Comparison Section */}
       <section className="section bg-background">
         <div className="container-custom">
@@ -345,6 +236,81 @@ const Landlords = () => {
           </div>
         </div>
       </section>
+
+      {/* Choose Your Bonus */}
+      <section className="section gradient-hero">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              🎁 Choose Your Welcome Bonus
+            </h2>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+              As a thank-you for partnering with Hostworthy, we'll give you an exclusive bonus — tailored to what matters most to you.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {/* Bonus Option 1 */}
+            <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/20 transition-all duration-300 p-6">
+              <CardContent className="text-center space-y-4 p-0">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto">
+                  <MapPin className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="font-semibold text-white text-lg">Free Off-Peak Week</h4>
+                <p className="text-white/80 text-sm">
+                  Enjoy a complimentary week at any Hostworthy property during off-peak season
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Bonus Option 2 */}
+            <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/20 transition-all duration-300 p-6">
+              <CardContent className="text-center space-y-4 p-0">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto">
+                  <Home className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="font-semibold text-white text-lg">Council Rates Paid</h4>
+                <p className="text-white/80 text-sm">
+                  We'll cover your first quarter council rates as our welcome gift
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Bonus Option 3 */}
+            <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/20 transition-all duration-300 p-6">
+              <CardContent className="text-center space-y-4 p-0">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto">
+                  <Hammer className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="font-semibold text-white text-lg">Capital Upgrade</h4>
+                <p className="text-white/80 text-sm">
+                  $1,000 contribution toward property improvements of your choice
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Bonus Option 4 */}
+            <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/20 transition-all duration-300 p-6">
+              <CardContent className="text-center space-y-4 p-0">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto">
+                  <Gift className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="font-semibold text-white text-lg">Cash Rebate</h4>
+                <p className="text-white/80 text-sm">
+                  Choose a direct cash rebate or premium gift card instead
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
+              <Link to="/contact">Get Your Bonus Estimate</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
 
       {/* FAQ Section */}
       <section className="section bg-background">
