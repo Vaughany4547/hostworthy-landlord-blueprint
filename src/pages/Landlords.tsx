@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Link } from "react-router-dom";
+import PropertyEarningsCalculator from "@/components/PropertyEarningsCalculator";
 import { 
   Shield, 
   CheckCircle, 
@@ -236,6 +237,9 @@ const Landlords = () => {
           </div>
         </div>
       </section>
+
+      {/* Property Earnings Calculator */}
+      <PropertyEarningsCalculator />
 
       {/* Choose Your Bonus */}
       <section className="section gradient-hero">
