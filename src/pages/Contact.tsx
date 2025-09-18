@@ -1,0 +1,139 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
+
+const Contact = () => {
+  return (
+    <main>
+      {/* Hero Section */}
+      <section className="gradient-hero text-primary-foreground py-20 lg:py-32">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Ready to Partner With Us?
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90 font-light">
+              Let's discuss how Hostworthy can transform your property into a consistent income stream.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="section bg-background">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-3xl font-bold mb-6 text-primary">Get In Touch</h2>
+                <p className="text-lg text-muted-foreground mb-8">
+                  Ready to learn more about guaranteed rent and professional property management? 
+                  We'd love to discuss how Hostworthy can work for your property.
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-trust/10 rounded-full flex items-center justify-center">
+                    <Phone className="w-6 h-6 text-trust" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-primary">Phone</h3>
+                    <p className="text-muted-foreground">0400 123 456</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-growth/10 rounded-full flex items-center justify-center">
+                    <Mail className="w-6 h-6 text-growth" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-primary">Email</h3>
+                    <p className="text-muted-foreground">hello@hostworthy.com.au</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-primary">Service Area</h3>
+                    <p className="text-muted-foreground">Sunshine Coast & Brisbane</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-trust/10 rounded-full flex items-center justify-center">
+                    <Clock className="w-6 h-6 text-trust" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-primary">Response Time</h3>
+                    <p className="text-muted-foreground">Within 24 hours</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <Card className="shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-primary">Book Your Free Consultation</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="firstName">First Name</Label>
+                    <Input id="firstName" placeholder="Your first name" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="lastName">Last Name</Label>
+                    <Input id="lastName" placeholder="Your last name" />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" type="email" placeholder="your@email.com" />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="phone">Phone</Label>
+                  <Input id="phone" type="tel" placeholder="0400 000 000" />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="property">Property Location</Label>
+                  <Input id="property" placeholder="Suburb, State" />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="message">Tell us about your property</Label>
+                  <Textarea 
+                    id="message" 
+                    placeholder="Property type, number of bedrooms, any specific questions..."
+                    rows={4}
+                  />
+                </div>
+
+                <Button className="w-full btn-trust" size="lg">
+                  Book Free Consultation
+                </Button>
+
+                <p className="text-sm text-muted-foreground text-center">
+                  No obligation. We'll discuss your property and answer all your questions.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+};
+
+export default Contact;

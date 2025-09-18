@@ -27,7 +27,7 @@ const Homepage = () => {
               <Button asChild size="lg" className="btn-hero">
                 <Link to="/landlords">Learn How It Works</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+              <Button asChild variant="outline" size="lg" className="border-white bg-white/10 text-white hover:bg-white hover:text-primary backdrop-blur-sm">
                 <Link to="/contact">Partner With Us</Link>
               </Button>
             </div>
