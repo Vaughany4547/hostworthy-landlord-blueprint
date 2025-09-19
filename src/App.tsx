@@ -8,6 +8,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
 import Homepage from "./pages/Homepage";
 import Landlords from "./pages/Landlords";
+import LettingAgents from "./pages/LettingAgents";
 import ForGuests from "./pages/ForGuests";
 import About from "./pages/About";
 import Resources from "./pages/Resources";
@@ -31,6 +32,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="/landlords" element={<Landlords />} />
+              <Route path="/letting-agents" element={<LettingAgents />} />
               <Route path="/for-guests" element={<ForGuests />} />
               <Route path="/about" element={<About />} />
               <Route path="/resources" element={<Resources />} />
