@@ -51,7 +51,7 @@ const Contact = () => {
       console.error('Error submitting form:', error);
       toast({
         title: "Something went wrong",
-        description: "Please try again or call us directly on 0400 123 456.",
+        description: "Please try again or call us directly on 0432 055 024.",
         variant: "destructive",
       });
     } finally {
@@ -96,7 +96,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-primary">Phone</h3>
-                    <p className="text-muted-foreground">0400 123 456</p>
+                    <p className="text-muted-foreground">0432 055 024</p>
                   </div>
                 </div>
 
